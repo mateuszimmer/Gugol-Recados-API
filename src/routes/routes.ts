@@ -15,6 +15,9 @@ import { storeRecados, storeUsuarios, storeUsuariosLogados } from '../store';
 export const router = Router();
 
 // Usuarios
+router.get('/', (req: Request, res: Response) => {
+    return res.send('Gugol Recados API')
+})
 router.post('/cadastro',[ checkInfosCadastro, checkEmailESenha ], (req: Request, res: Response) => {
     addUser(req, res)
     console.table(storeUsuarios)    
