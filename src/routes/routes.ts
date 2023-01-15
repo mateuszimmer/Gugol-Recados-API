@@ -16,7 +16,7 @@ export const router = Router();
 
 // Usuarios
 router.get('/', (req: Request, res: Response) => {
-    return res.send('Gugol Recados API')
+    return res.status(200).json({api: "Gugol Recados API"})
 })
 router.post('/cadastro',[ checkInfosCadastro, checkEmailESenha ], (req: Request, res: Response) => {
     addUser(req, res)

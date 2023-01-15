@@ -16,6 +16,9 @@ const checkUsuarioLogado_1 = require("../middlewares/checkUsuarioLogado");
 const store_1 = require("../store");
 exports.router = (0, express_1.Router)();
 // Usuarios
+exports.router.get('/', (req, res) => {
+    return res.status(200).json({ api: "Gugol Recados API" });
+});
 exports.router.post('/cadastro', [checkInfosCadastro_1.checkInfosCadastro, checkEmailESenha_1.checkEmailESenha], (req, res) => {
     (0, addUser_1.addUser)(req, res);
     console.table(store_1.storeUsuarios);
